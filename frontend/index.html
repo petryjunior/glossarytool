@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glossary Lookup Tool</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <h1>Glossary Lookup Tool</h1>
+      </header>
+
+      <section class="toolbar">
+        <input
+          type="file"
+          id="glossaryFiles"
+          multiple
+          accept=".csv,.xlsx,.xls"
+        />
+        <button id="uploadButton" type="button">Upload Glossary Files</button>
+        <div class="filters">
+          <label><input type="checkbox" id="exactMatch" />Exact Match</label>
+          <label><input type="checkbox" id="wholeWordMatch" />Whole Word Match</label>
+        </div>
+        <div class="status" id="statusMessage">No glossaries loaded yet.</div>
+      </section>
+
+      <section class="glossary-panel">
+        <div id="glossaryCheckboxes" aria-live="polite"></div>
+      </section>
+
+      <section class="content">
+        <div class="term-column">
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search terms..."
+            autocomplete="off"
+          />
+          <ul id="termList"></ul>
+        </div>
+        <div class="details-column">
+          <div id="resultArea"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
+
